@@ -36,3 +36,5 @@ router.get("/:id?", (req, res) => {
   }
   Park.find({}).then(items => res.json(items));
 });
+
+module.exports = router;

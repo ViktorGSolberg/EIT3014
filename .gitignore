@@ -1,5 +1,8 @@
 # Created by https://www.gitignore.io/api/node,webstorm
 
+#Keys
+config/keys_private.js
+
 ### Node ###
 # Logs
 logs

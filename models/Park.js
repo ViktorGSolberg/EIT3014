@@ -6,32 +6,30 @@ const Schema = mongoose.Schema,
 const parkSchema = new Schema({
   id: ObjectId,
   ledStrips: {
-    strip_1: { type: String, required: true },
-    strip_2: { type: String, required: true },
-    strip_3: { type: String, required: true },
-    strip_4: { type: String, required: true },
-    strip_5: { type: String, required: true },
-    strip_6: { type: String, required: true },
-    strip_7: { type: String, required: true },
-    strip_8: { type: String, required: true },
-    strip_9: { type: String, required: true },
-    strip_10: { type: String, required: true }
+    strip_1: String,
+    strip_2: String,
+    strip_3: String,
+    strip_4: String,
+    strip_5: String,
+    strip_6: String,
+    strip_7: String,
+    strip_8: String,
+    strip_9: String,
+    strip_10: String
   },
   ledBoxes: {
-    box_1: { type: String, required: true },
-    box_2: { type: String, required: true },
-    box_3: { type: String, required: true },
-    box_4: { type: String, required: true },
-    box_5: { type: String, required: true },
-    box_6: { type: String, required: true },
-    box_7: { type: String, required: true },
-    box_8: { type: String, required: true },
-    box_9: { type: String, required: true }
+    box_1: String,
+    box_2: String,
+    box_3: String,
+    box_4: String,
+    box_5: String,
+    box_6: String,
+    box_7: String,
+    box_8: String,
+    box_9: String
   },
-  screens: {
-    screen_1: { type: String, required: true },
-    screen_2: { type: String, required: true }
-  }
+  screen_1: String,
+  screen_2: String
 });
 
 module.exports = Park = mongoose.model("park", parkSchema);

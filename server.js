@@ -15,6 +15,7 @@ app.use(
     origin: "http://localhost:3000"
   })
 );
+app.use("/uploads", express.static("uploads")); // Sets uploads folder to public
 app.use(bodyParser.json());
 
 // MongoDB config og connection

@@ -1,6 +1,30 @@
 const express = require("express");
 const sanitize = require("mongo-sanitize");
 const { check, validationResult } = require("express-validator");
+const multer = require("multer");
+
+// Def storage obj for images:
+const storage = multer.diskStorage({
+  destination: (req, file, callback) => {
+    callback(null, "./uploads/");
+  },
+  filename: (req, file, callback) => {
+    fileExtension = file.originalname.split(".")[1]; // get file extension from original file name
+    callback(null, file.fieldname + "." + fileExtension);
+  }
+});
+
+// Image filter for types, return the file if correct type, else not.
+const fileFilter = (req, file, callback) => {
+  const mimetypeArr = ["image/jpeg", "image/png", "image/gif"];
+  if (mimetypeArr.includes(file.mimetype)) {
+    callback(null, true);
+  } else {
+    callback(null, false);
+  }
+};
+
+const upload = multer({ storage: storage, fileFilter: fileFilter });
 
 const Park = require("../../models/Park");
 
@@ -46,25 +70,41 @@ router.delete("/remove/:id", (req, res) => {
  *  @route PUT api/park/update
  *  @param :id api/park/<object id>
  */
-router.put("/update/:id", (req, res) => {
-  let id = sanitize(req.params.id);
-  Park.findOneAndUpdate(
-    { _id: id },
-    req.body,
-    { useFindAndModify: false, new: true },
-    (err, obj) => {
-      if (err) {
-        res.status(500).send();
-      } else {
-        if (!obj) {
-          res.status(404).send();
+router.put(
+  "/update/:id",
+  upload.fields([
+    // Midleware for multer uploade
+    { name: "screen_1", maxCount: 1 },
+    { name: "screen_2", maxCount: 1 }
+  ]),
+  (req, res) => {
+    let id = sanitize(req.params.id);
+    Park.findOneAndUpdate(
+      { _id: id },
+      {
+        $set: {
+          // Props to update
+          ledStrips: req.body.ledStrips,
+          ledBoxes: req.body.ledBoxes,
+          screen_1: req.files["screen_1"][0].path,
+          screen_2: req.files["screen_2"][0].path
+        }
+      },
+      { useFindAndModify: false, new: true },
+      (err, obj) => {
+        if (err) {
+          res.status(500).send();
         } else {
-          res.send(obj);
+          if (!obj) {
+            res.status(404).send();
+          } else {
+            res.send(obj);
+          }
         }
       }
-    }
-  );
-});
+    );
+  }
+);
 
 /*
  *  @route GET api/park

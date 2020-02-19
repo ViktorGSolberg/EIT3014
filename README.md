@@ -23,7 +23,9 @@ Base url: localhost:5000/api
     "_id": "5e44379718b...",
     "screen_1": "uploads\\screen_1.jpg",
     "screen_2": "uploads\\screen_2.png",
-    "__v": 0
+    "__v": 0,
+    "project_organizer": "Organizer for project",
+    "project_title": "Title for project"
   }
  ```
  

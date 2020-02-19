@@ -37,6 +37,8 @@ const router = express.Router();
  */
 router.post("/add", (req, res) => {
   const newPark = new Park({
+    project_title: sanitize(req.body.project_title),
+    project_organizer: sanitize(req.body.project_organizer),
     ledStrips: sanitize(req.body.ledStrips),
     ledBoxes: sanitize(req.body.ledBoxes),
     screen_1: sanitize(req.body.screen_1),
@@ -84,8 +86,10 @@ router.put(
       {
         $set: {
           // Props to update
-          ledStrips: req.body.ledStrips,
-          ledBoxes: req.body.ledBoxes,
+          project_title: sanitize(req.body.project_title),
+          project_organizer: sanitize(req.body.project_organizer),
+          ledStrips: sanitize(req.body.ledStrips),
+          ledBoxes: sanitize(req.body.ledBoxes),
           screen_1: req.files["screen_1"][0].path,
           screen_2: req.files["screen_2"][0].path
         }

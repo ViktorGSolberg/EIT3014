@@ -13,6 +13,8 @@ const arrBoxLimit = val => {
 
 const parkSchema = new Schema({
   id: ObjectId,
+  project_title: String,
+  project_organizer: String,
   ledStrips: {
     type: Array,
     validate: [arrStripsLimit, "{PATH} exceeds the limit of 10"]

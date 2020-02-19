@@ -23,24 +23,15 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const sections = [
-  { title: 'Tab 1', url: '#' },
-  { title: 'Tab 2', url: '#' },
-  { title: 'Tab 3', url: '#' },
-  { title: 'Tab 4', url: '#' },
   { title: 'admin', url: 'admin' },
-  { title: 'Tab 6', url: '#' },
-  { title: 'Tab 7', url: '#' },
-  { title: 'Tab 8', url: '#' },
-  { title: 'Tab 9', url: '#' },
 ];
 
 const mainFeaturedPost = {
-  title: 'Title of a longer featured blog post',
+  title: 'POTENSIELL TITTEL',
   description:
-    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   image: 'https://source.unsplash.com/random',
   imgText: 'main image description',
-  linkText: 'Continue reading…',
 };
 
 const featuredPosts = [
@@ -114,7 +105,7 @@ export default function Blog() {
           </Grid>
         </main>
       </Container>
-      <Footer title="NAVN PÅ ARRANGEMENT" description="Something here to give the footer a purpose!" author="Gruppe A, EiT"/>
+      <Footer title="NAVN PÅ ARRANGEMENT" description="TEKST HER?" author="Gruppe A, EiT"/>
     </React.Fragment>
   );
 }

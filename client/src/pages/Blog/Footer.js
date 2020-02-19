@@ -13,7 +13,7 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
+      <Link color="inherit" href="https://www.ntnu.no/eit/eit3014">
         {author}
       </Link>{' '}
       {new Date().getFullYear()}

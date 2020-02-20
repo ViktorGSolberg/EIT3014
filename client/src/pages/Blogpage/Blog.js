@@ -63,13 +63,12 @@ const sidebar = {
 
 export default function Blog(props) {
   const classes = useStyles();
-  const {mainTitle} = props;
 
   return (
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
-       <Header title={mainTitle} sections={sections} />
+       <Header title={props.eventTitle} sections={sections} />
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>
@@ -87,7 +86,7 @@ export default function Blog(props) {
           </Grid>
         </main>
       </Container>
-      <Footer title="NAVN PÅ ARRANGEMENT" description="TEKST HER?" author="Gruppe A, EiT"/>
+      <Footer title={props.eventName} description={props.footerText} author={props.authors}/>
     </React.Fragment>
   );
 }

@@ -6,7 +6,10 @@ class Blogpage extends Component {
   render() {
     return (
     <Blog
-    mainTitle="TEST"
+    eventTitle="BONDENS MARKED"
+    mainTitle="SMAKSFULL KVALITETSMAT"
+    subTitle1="SE MARKEDET"
+    subTitle2="MØT BØNDENDE"
 
     >
     </Blog>

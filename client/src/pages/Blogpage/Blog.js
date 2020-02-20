@@ -22,33 +22,6 @@ const sections = [
   { title: 'admin', url: 'admin' },
 ];
 
-const mainFeaturedPost = {
-  title: 'POTENSIELL TITTEL',
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  image: 'https://source.unsplash.com/random',
-  imgText: 'main image description',
-};
-
-const featuredPosts = [
-  {
-    title: 'UNDERTITTEL',
-    date: 'Nov 12',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ',
-    image: 'https://source.unsplash.com/random',
-    imageText: 'Image Text',
-  },
-  {
-    title: 'UNDERTITTEL',
-    date: 'Nov 11',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: 'https://source.unsplash.com/random',
-    imageText: 'Image Text',
-  },
-];
-
 const sidebar = {
   title: 'NÆRMERE INFORMASJON OM ARRANGEMENTET',
   description:
@@ -63,6 +36,33 @@ const sidebar = {
 
 export default function Blog(props) {
   const classes = useStyles();
+
+  const mainFeaturedPost = {
+    title: 'POTENSIELL TITTEL',
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    image: props.picture,
+    imgText: 'main image description',
+  };
+
+  const featuredPosts = [
+    {
+      title: 'UNDERTITTEL',
+      date: 'Nov 12',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ',
+      image: props.picture,
+      imageText: 'Image Text',
+    },
+    {
+      title: 'UNDERTITTEL',
+      date: 'Nov 11',
+      description:
+        'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      image: props.picture,
+      imageText: 'Image Text',
+    },
+  ];
 
   return (
     <React.Fragment>

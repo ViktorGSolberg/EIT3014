@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Blog from './Blog';
-
+import picture from '../../SamplePics/bondens_marked.jfif'
 
 class Blogpage extends Component {
   render() {
@@ -18,6 +18,8 @@ class Blogpage extends Component {
     infoText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolorge magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     footerText="TEKS I FOOTEREN?"
     authors="Gruppe A, EiT"
+
+    picture={picture}
 
     >
     </Blog>

@@ -9,12 +9,8 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import Header from './Header';
 import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
-import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
-import post1 from './blog-post1.md';
-import post2 from './blog-post2.md';
-import post3 from './blog-post3.md';
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
@@ -53,8 +49,6 @@ const featuredPosts = [
   },
 ];
 
-const posts = [post1, post2, post3];
-
 const sidebar = {
   title: 'NÆRMERE INFORMASJON OM ARRANGEMENTET',
   description:
@@ -67,14 +61,15 @@ const sidebar = {
   ],
 };
 
-export default function Blog() {
+export default function Blog(props) {
   const classes = useStyles();
+  const {mainTitle} = props;
 
   return (
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
-       <Header title="NAVN PÅ ARRANGEMENT" sections={sections} />
+       <Header title={mainTitle} sections={sections} />
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>

@@ -5,10 +5,12 @@ import Homepage from './pages/Homepage/Homepage';
 import Adminpage from './pages/Adminpage/Adminpage';
 import Blogpage from './pages/Blogpage/Blogpage'
 
+const backgroundColor = "white";
+
 class App extends Component {
   render() {
     const App = () => (
-      <div>
+      <div style={{backgroundColor: backgroundColor}}>
         <Switch>
           <Route exact path='/' component={Homepage}/>
           <Route exact path='/blog' component={Blogpage}/>

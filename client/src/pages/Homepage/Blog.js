@@ -70,7 +70,7 @@ export default function Blog(props) {
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>
             {featuredPosts.map(post => (
-              <FeaturedPost key={post.title} post={post} />
+              <FeaturedPost key={post.title} post={post} eventWebsite={props.eventWebsite} />
             ))}
           </Grid>
           <Grid  className={classes.mainGrid}>

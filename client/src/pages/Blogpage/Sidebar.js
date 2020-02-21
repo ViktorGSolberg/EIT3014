@@ -42,7 +42,11 @@ export default function Sidebar(props) {
             <Grid item>
               <network.icon />
             </Grid>
-            <Grid item>{network.name}</Grid>
+            <Grid item>
+              <Link href={network.link}>
+                {network.name}
+              </Link>
+            </Grid>
           </Grid>
         </Link>
       ))}

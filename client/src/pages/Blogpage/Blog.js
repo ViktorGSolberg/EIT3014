@@ -18,47 +18,44 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const sections = [
-  { title: 'admin', url: 'admin' },
-];
-
-const sidebar = {
-  title: 'NÆRMERE INFORMASJON OM ARRANGEMENTET',
-  description:
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  archives: [],
-  social: [
-    { name: 'GitHub', icon: GitHubIcon },
-    { name: 'Twitter', icon: TwitterIcon },
-    { name: 'Facebook', icon: FacebookIcon },
-  ],
-};
-
 export default function Blog(props) {
   const classes = useStyles();
 
+  const sections = [
+    { title: 'admin', url: 'admin' },
+  ];
+
+  const sidebar = {
+    title: props.infoTitle,
+    description: props.infoText,
+    archives: [],
+    social: [
+      { name: 'GitHub', icon: GitHubIcon, link: props.githubLink},
+      { name: 'Twitter', icon: TwitterIcon, link: props.twitterLink},
+      { name: 'Facebook', icon: FacebookIcon, link: props.facebookLink},
+    ],
+  };
+  
+
   const mainFeaturedPost = {
-    title: 'POTENSIELL TITTEL',
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    title: props.mainTitle,
+    description: props.mainText,
     image: props.picture,
     imgText: 'main image description',
   };
 
   const featuredPosts = [
     {
-      title: 'UNDERTITTEL',
-      date: 'Nov 12',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ',
+      title: props.subTitle1,
+      date: props.eventDate,
+      description: props.subText1,
       image: props.picture,
       imageText: 'Image Text',
     },
     {
-      title: 'UNDERTITTEL',
-      date: 'Nov 11',
-      description:
-        'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      title: props.subTitle2,
+      date: props.eventDate,
+      description: props.subText2,
       image: props.picture,
       imageText: 'Image Text',
     },
@@ -86,7 +83,7 @@ export default function Blog(props) {
           </Grid>
         </main>
       </Container>
-      <Footer title={props.eventName} description={props.footerText} author={props.authors}/>
+      <Footer title={props.eventTitle} description={props.footerText} author={props.authors} eventWebsite={props.eventWebsite}/>
     </React.Fragment>
   );
 }

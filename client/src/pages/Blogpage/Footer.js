@@ -41,7 +41,10 @@ export default function Footer(props) {
           {title}
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
+          <Link color="inherit" href={props.eventWebsite}>
           {description}
+          </Link>
+          
         </Typography>
         <Copyright author={author}/>
       </Container>

@@ -14,12 +14,14 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@material-ui/icons": "^4.9.1",
     "body-parser": "^1.19.0",
     "concurrently": "^4.1.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-validator": "^6.4.0",
     "helmet": "^3.21.2",
+    "markdown-to-jsx": "^6.11.0",
     "mongo-sanitize": "^1.0.1",
     "mongoose": "^5.8.11",
     "multer": "^1.4.2"

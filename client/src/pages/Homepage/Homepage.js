@@ -6,35 +6,42 @@ import getContent from '../../contentfulHandler';
 
 class Blogpage extends Component {
 
+  constructor(props) {
+    super(props);
+
+    let content = getContent();
+    this.state = content;
+  }
   
 
   async componentDidMount() {
     let content = await getContent();
-    return content;
+    console.log(content);
+    this.setState(content);
   }
 
   render() {
     return (
     <Blog
-    eventTitle="Bondens marked" // check (header, footer)
-    mainTitle="MAT MED KVALITET" // check (mainPost)
-    mainText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolorge magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." //check (main)
-    eventDate="Mar 12" // check (post1, post2)
-    subTitle1="SE MARKEDET" // check (post1)
-    subText1="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut." // check (post1)
-    subTitle2="MØT BØNDENDE" // check (post2)
-    subText2="This is a wider card with supporting text below as a natural lead-in to additional content." // check (post2)
-    infoTitle="NÆRMERE INFORMASJON OM ARRANGEMENTET" // check (info)
-    infoText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolorge magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." // check (info)
-    footerText="Les mer om arrangementet her." // check (footer)
-    authors="Gruppe A, EiT" // check (footer)
+    eventTitle={this.state.eventTitle} // check (header, footer)
+    mainTitle={this.state.mainTitle} // check (mainPost)
+    mainText={this.state.mainText} //check (main)
+    eventDate={this.state.eventDate}// check (post1, post2)
+    subTitle1={this.state.subTitle1} // check (post1)
+    subText1={this.state.subText1} // check (post1)
+    subTitle2={this.state.subTitle2} // check (post2)
+    subText2={this.state.subText2} // check (post2)
+    infoTitle={this.state.infoTitle} // check (info)
+    infoText={this.state.infoText} // check (info)
+    footerText={this.state.footerText} // check (footer)
+    authors={this.state.authors} // check (footer)
     
-    githubLink="https://github.com/ViktorGSolberg/EIT3014"
-    twitterLink="https://www.twitter.com/bondensmarked"
-    facebookLink="https://www.facebook.com/Bondensmarkedtrondelag"
+    githubLink={this.state.githubURL}
+    twitterLink={this.state.twitterURL}
+    facebookLink={this.state.facebookURL}
 
-    eventWebsite="https://www.bondensmarked.no"
-    picture={picture}
+    eventWebsite={this.state.eventURL}
+    picture={this.state.eventImage}
     >
     </Blog>
     );

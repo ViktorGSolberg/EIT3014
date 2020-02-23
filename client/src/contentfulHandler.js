@@ -9,11 +9,28 @@ let client = contentful.createClient({
     accessToken: ACCESSTOKEN,
 });
 
-
-
-export default async function getContent() {
-    let content = await client.getEntry(ENTRYID);
-    // console.log(content.fields);
-
-    return content;
+const getContent = async () => {
+    let unprocessedContent = await client.getEntry(ENTRYID);
+    let processedContent = {
+        eventTitle: unprocessedContent.fields.eventTitle,
+        mainTitle: unprocessedContent.fields.mainTitle,
+        mainText: unprocessedContent.fields.mainText,
+        eventDate: unprocessedContent.fields.eventDate,
+        subTitle1: unprocessedContent.fields.subtitle1,
+        subText1: unprocessedContent.fields.subtext1,
+        subTitle2: unprocessedContent.fields.subtitle2,
+        subText2: unprocessedContent.fields.subtext2,
+        infoTitle: unprocessedContent.fields.infoTitle,
+        infoText: unprocessedContent.fields.infoText,
+        footerText: unprocessedContent.fields.footerText,
+        authors: unprocessedContent.fields.authors,
+        githubURL: unprocessedContent.fields.githubUrl,
+        facebookURL: unprocessedContent.fields.facebookUrl,
+        twitterURL: unprocessedContent.fields.twitterUrl,
+        eventURL: unprocessedContent.fields.eventUrl,
+        eventImage: unprocessedContent.fields.eventImage.fields.file.url,
+    }
+    return processedContent;
 }
+
+export default getContent;

@@ -16,7 +16,6 @@ class Blogpage extends Component {
 
   async componentDidMount() {
     let content = await getContent();
-    console.log(content);
     this.setState(content);
   }
 

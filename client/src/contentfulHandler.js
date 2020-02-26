@@ -1,8 +1,10 @@
 let contentful = require('contentful');
 
-const SPACEID = 'tvquknpoe765';
-const ACCESSTOKEN = 'fVmV6uikhchA4pYBFcXmwpPgFcUlE2cv8EtPZ1JqpZg';
-const ENTRYID = '4oGqPgmUbAnJPaNuXcBNUL';
+
+const SPACEID = 'j4un17i75qqo';
+const ACCESSTOKEN = 'GwHY26aYgr9M-Fm4yJQ7pnHnzmzhgVYoZdgLtY-Bsc4';
+const ENTRYID_MARKED = '7ipbkDIfgSqCQDJU5pVUUb';
+const ENTRYID_KINO = '1NT3u551OP8zjsBfJHDuu8';
 
 let client = contentful.createClient({
     space: SPACEID,
@@ -10,7 +12,7 @@ let client = contentful.createClient({
 });
 
 const getContent = async () => {
-    let unprocessedContent = await client.getEntry(ENTRYID);
+    let unprocessedContent = await client.getEntry(ENTRYID_MARKED);
     let processedContent = {
         eventTitle: unprocessedContent.fields.eventTitle,
         mainTitle: unprocessedContent.fields.mainTitle,

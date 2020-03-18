@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Blog from './Blog';
-import picture from '../../SamplePics/bondens_marked.jfif'
 import getContent from '../../contentfulHandler';
 
 

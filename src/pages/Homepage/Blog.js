@@ -22,7 +22,6 @@ export default function Blog(props) {
   const classes = useStyles();
 
   const sections = [
-    { title: 'admin', url: 'admin' },
   ];
 
   const sidebar = {

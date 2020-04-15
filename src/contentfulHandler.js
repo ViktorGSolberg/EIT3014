@@ -31,6 +31,8 @@ const getContent = async () => {
         twitterURL: unprocessedContent.fields.twitterUrl,
         eventURL: unprocessedContent.fields.eventUrl,
         eventImage: unprocessedContent.fields.eventImage.fields.file.url,
+        smallImage1: unprocessedContent.fields.smallImage1.fields.file.url,
+        smallImage2: unprocessedContent.fields.smallImage2.fields.file.url,
     }
     return processedContent;
 }

@@ -39,7 +39,10 @@ class Blogpage extends Component {
     facebookLink={this.state.facebookURL}
 
     eventWebsite={this.state.eventURL}
-    picture={this.state.eventImage}
+    picture1={this.state.eventImage}
+    picture2={this.state.smallImage2}
+    picture3={this.state.smallImage1}
+
     >
     </Blog>
     );

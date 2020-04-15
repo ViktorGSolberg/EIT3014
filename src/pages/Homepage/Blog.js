@@ -39,7 +39,7 @@ export default function Blog(props) {
   const mainFeaturedPost = {
     title: props.mainTitle,
     description: props.mainText,
-    image: props.picture,
+    image: props.picture1,
     imgText: 'main image description',
   };
 
@@ -48,14 +48,14 @@ export default function Blog(props) {
       title: props.subTitle1,
       date: props.eventDate,
       description: props.subText1,
-      image: props.picture,
+      image: props.picture2,
       imageText: 'Image Text',
     },
     {
       title: props.subTitle2,
       date: props.eventDate,
       description: props.subText2,
-      image: props.picture,
+      image: props.picture3,
       imageText: 'Image Text',
     },
   ];

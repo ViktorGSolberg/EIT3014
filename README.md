@@ -1,42 +1,8 @@
 # EIT3014
 
-## Web server
-Start server:
-```
-npm run server
-```
+Kodebasen til gruppe A sin nettside i faget EIT3014 - Eksperter i Team.
 
-
-## API
-### Endpoints
-Base url: localhost:5000/api
-
- ```
- GET
- @Route (All): <baseURL>/park
- @Param (Optional, GET one): <baseURL>/park/<entity id>
- 
- 200 OK:
-  {
-    "ledStrips": [#000000, #000000, ...],
-    "ledBoxes": [#000000, #000000, ...],
-    "_id": "5e44379718b...",
-    "screen_1": "uploads\\screen_1.jpg",
-    "screen_2": "uploads\\screen_2.png",
-    "__v": 0,
-    "project_organizer": "Organizer for project",
-    "project_title": "Title for project"
-  }
- ```
- 
- ```
- PUT
- Updates one entity
- 
- @Route: <baseURL>/park/update/<entity id>
- @Param (Requierd): _id = 5e44379718b...
- 
- 200 OK:
- Returns the updated JSON-object.
- ```
- 
+## Hvordan kjøre prosjektet
+1. Klon repoet.
+2. npm install
+3. npm start
